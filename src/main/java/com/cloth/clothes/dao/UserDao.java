@@ -10,4 +10,10 @@ import java.util.List;
 public interface UserDao {
     @Select("SELECT * FROM user")
     List<User> selectUser();
+
+    @Select("select * from user where name = #{userName}")
+    User findUserByName(String userName);
+
+    @Select("SELECT * FROM user WHERE id = #{uid}")
+    User findUserById(String uid);
 }
